@@ -36,6 +36,7 @@ namespace Part_4___Random_Assignment
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnInt = new System.Windows.Forms.Button();
             this.btnDbl = new System.Windows.Forms.Button();
+            this.lblResults = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblInstructions
@@ -97,11 +98,21 @@ namespace Part_4___Random_Assignment
             this.btnDbl.Text = "Get Double";
             this.btnDbl.UseVisualStyleBackColor = true;
             // 
+            // lblResults
+            // 
+            this.lblResults.AutoSize = true;
+            this.lblResults.Location = new System.Drawing.Point(16, 120);
+            this.lblResults.Name = "lblResults";
+            this.lblResults.Size = new System.Drawing.Size(10, 13);
+            this.lblResults.TabIndex = 7;
+            this.lblResults.Text = ":";
+            // 
             // RandomNumbers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 386);
+            this.ClientSize = new System.Drawing.Size(391, 176);
+            this.Controls.Add(this.lblResults);
             this.Controls.Add(this.btnDbl);
             this.Controls.Add(this.btnInt);
             this.Controls.Add(this.textBox2);
@@ -125,6 +136,7 @@ namespace Part_4___Random_Assignment
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnInt;
         private System.Windows.Forms.Button btnDbl;
+        private System.Windows.Forms.Label lblResults;
     }
 }
 
