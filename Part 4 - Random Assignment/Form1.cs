@@ -13,11 +13,9 @@ namespace Part_4___Random_Assignment
     public partial class RandomNumbers : Form
     {
         Random generator = new Random();
-        double dblMin;
-        double dblMax;
-        int intMin;
-        int intMax;
-        
+        string strMin;
+        string strMax;
+        int intDecimals;
         public RandomNumbers()
         {
             InitializeComponent();
@@ -25,17 +23,43 @@ namespace Part_4___Random_Assignment
 
         private void btnInt_Click(object sender, EventArgs e)
         {
-            intMin = Convert.ToInt32(txtMin.Text);
-            intMax = Convert.ToInt32(txtMax.Text);
+            int intMin;
+            int intMax;
+            int.TryParse(strMin, out intMin);
+            int.TryParse(strMax, out intMax);
             lblResults.Text = Convert.ToString(generator.Next(intMin, intMax));
             
         }
 
         private void btnDbl_Click(object sender, EventArgs e)
         {
-            dblMin = Convert.ToDouble(txtMin.Text);
-            dblMax = Convert.ToDouble(txtMax.Text);
-            lblResults.Text = Convert.ToString(generator.NextDouble() * (dblMax - dblMin) + dblMin);
+            double dblMin;
+            double dblMax;
+            double dblResults;
+            double.TryParse(strMin, out dblMin);
+            double.TryParse(strMax, out dblMax);
+            dblResults = (generator.NextDouble() * (dblMax - dblMin) + dblMin);
+            dblResults = Math.Round(dblResults, intDecimals);
+            lblResults.Text = Convert.ToString(dblResults);
+
+        }
+
+        private void txtMin_TextChanged(object sender, EventArgs e)
+        {
+            strMin = txtMin.Text;
+        }
+
+        private void txtMax_TextChanged(object sender, EventArgs e)
+        {
+            strMax = txtMax.Text;
+        }
+
+        private void nudDecimal_ValueChanged(object sender, EventArgs e)
+        {
+            intDecimals = Convert.ToInt32(nudDecimal.Value);
+            if (intDecimals > 15) { 
+                intDecimals = 2;
+            }
         }
     }
 }
