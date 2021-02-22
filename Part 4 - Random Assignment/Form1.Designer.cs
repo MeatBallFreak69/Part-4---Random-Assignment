@@ -32,8 +32,8 @@ namespace Part_4___Random_Assignment
             this.lblInstructions = new System.Windows.Forms.Label();
             this.lblMin = new System.Windows.Forms.Label();
             this.lblMax = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMin = new System.Windows.Forms.TextBox();
+            this.txtMax = new System.Windows.Forms.TextBox();
             this.btnInt = new System.Windows.Forms.Button();
             this.btnDbl = new System.Windows.Forms.Button();
             this.lblResults = new System.Windows.Forms.Label();
@@ -66,19 +66,19 @@ namespace Part_4___Random_Assignment
             this.lblMax.TabIndex = 2;
             this.lblMax.Text = "Maximum";
             // 
-            // textBox1
+            // txtMin
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtMin.Location = new System.Drawing.Point(67, 41);
+            this.txtMin.Name = "txtMin";
+            this.txtMin.Size = new System.Drawing.Size(126, 20);
+            this.txtMin.TabIndex = 3;
             // 
-            // textBox2
+            // txtMax
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtMax.Location = new System.Drawing.Point(67, 64);
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(126, 20);
+            this.txtMax.TabIndex = 4;
             // 
             // btnInt
             // 
@@ -88,6 +88,7 @@ namespace Part_4___Random_Assignment
             this.btnInt.TabIndex = 5;
             this.btnInt.Text = "Get Integer";
             this.btnInt.UseVisualStyleBackColor = true;
+            this.btnInt.Click += new System.EventHandler(this.btnInt_Click);
             // 
             // btnDbl
             // 
@@ -97,6 +98,7 @@ namespace Part_4___Random_Assignment
             this.btnDbl.TabIndex = 6;
             this.btnDbl.Text = "Get Double";
             this.btnDbl.UseVisualStyleBackColor = true;
+            this.btnDbl.Click += new System.EventHandler(this.btnDbl_Click);
             // 
             // lblResults
             // 
@@ -115,8 +117,8 @@ namespace Part_4___Random_Assignment
             this.Controls.Add(this.lblResults);
             this.Controls.Add(this.btnDbl);
             this.Controls.Add(this.btnInt);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMax);
+            this.Controls.Add(this.txtMin);
             this.Controls.Add(this.lblMax);
             this.Controls.Add(this.lblMin);
             this.Controls.Add(this.lblInstructions);
@@ -132,8 +134,8 @@ namespace Part_4___Random_Assignment
         private System.Windows.Forms.Label lblInstructions;
         private System.Windows.Forms.Label lblMin;
         private System.Windows.Forms.Label lblMax;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMin;
+        private System.Windows.Forms.TextBox txtMax;
         private System.Windows.Forms.Button btnInt;
         private System.Windows.Forms.Button btnDbl;
         private System.Windows.Forms.Label lblResults;
